@@ -51,6 +51,8 @@ namespace StudPass2024_1
         public virtual ObservableCollectionListSource<AntropData> AntropDatas { get; } = new();
         // link to Measured 
         public virtual ObservableCollectionListSource<MeasuredData> MeasuredDatas { get; } = new();
+        // link to QData 
+        public virtual ObservableCollectionListSource<QData> QDatas { get; } = new();
 
     }
 }

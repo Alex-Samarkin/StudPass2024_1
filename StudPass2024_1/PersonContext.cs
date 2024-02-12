@@ -15,6 +15,7 @@ namespace StudPass2024_1
         public DbSet<EContact> EContacts { get; set; }
         public DbSet<AntropData> AntropDatas { get; set; }
         public DbSet<MeasuredData> MeasuredDatas { get; set; }
+        public DbSet<QData> QDatas { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
             => optionsBuilder.UseSqlite("Data Source=stud_pass.db");

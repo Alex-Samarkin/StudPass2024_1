@@ -180,6 +180,7 @@
             toolStripButton5.Name = "toolStripButton5";
             toolStripButton5.Size = new Size(123, 20);
             toolStripButton5.Text = "Быстрые измерения";
+            toolStripButton5.Click += toolStripButton5_Click;
             // 
             // toolStripContainer1
             // 

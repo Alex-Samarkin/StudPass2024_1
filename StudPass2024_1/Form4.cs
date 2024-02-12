@@ -11,15 +11,21 @@ using System.Windows.Forms;
 
 namespace StudPass2024_1
 {
-    public partial class Form3 : Form
+    public partial class Form4 : Form
     {
         public PersonContext? dbContext;
-        public Form3()
+        public Form4()
         {
             InitializeComponent();
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            this.dbContext!.SaveChanges();
+            this.personBindingSource.ResetBindings(false);
+        }
+
+        private void Form4_Load(object sender, EventArgs e)
         {
             this.dbContext.Persons.Load<Person>();
             this.dbContext.Adresses.Load<Adress>();
@@ -31,12 +37,6 @@ namespace StudPass2024_1
 
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dataGridView2.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-        }
-
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            this.dbContext!.SaveChanges();
-            this.personBindingSource.ResetBindings(false);
         }
     }
 }

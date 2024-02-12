@@ -24,7 +24,8 @@ namespace StudPass2024_1
             this.dbContext.Adresses.Load<Adress>();
             this.dbContext.EContacts.Load<EContact>();
             this.dbContext.AntropDatas.Load<AntropData>();
-            //this.dbContext.MeasuredDatas.Load<MeasuredData>();
+            this.dbContext.MeasuredDatas.Load<MeasuredData>();
+            this.dbContext.QDatas.Load<QData>();
 
             personBindingSource.DataSource = this.dbContext.Persons.Local.ToBindingList();
 
@@ -95,7 +96,14 @@ namespace StudPass2024_1
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            var f = new Form2();
+            var f = new Form3();
+            f.dbContext = this.dbContext;
+            f.ShowDialog();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            var f = new Form4();
             f.dbContext = this.dbContext;
             f.ShowDialog();
         }

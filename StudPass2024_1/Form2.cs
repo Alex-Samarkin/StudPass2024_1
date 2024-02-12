@@ -26,6 +26,8 @@ namespace StudPass2024_1
             this.dbContext.Adresses.Load<Adress>();
             this.dbContext.EContacts.Load<EContact>();
             this.dbContext.AntropDatas.Load<AntropData>();
+            this.dbContext.MeasuredDatas.Load<MeasuredData>();
+            this.dbContext.QDatas.Load<QData>();
             personBindingSource.DataSource = this.dbContext.Persons.Local.ToBindingList();
 
             dataGridView1.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);

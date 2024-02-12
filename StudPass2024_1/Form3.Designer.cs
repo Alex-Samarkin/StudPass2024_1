@@ -37,17 +37,7 @@
             splitContainer1 = new SplitContainer();
             dataGridView1 = new DataGridView();
             personBindingSource = new BindingSource(components);
-            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            middleNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            dateOfBirthDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            ageDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            genderDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            creditBookDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
-            rowVersionDataGridViewImageColumn = new DataGridViewImageColumn();
             dataGridView2 = new DataGridView();
-            measuredDatasBindingSource = new BindingSource(components);
             idDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             dateOfMeasurementDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             bPMDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
@@ -70,6 +60,16 @@
             rowVersionDataGridViewImageColumn1 = new DataGridViewImageColumn();
             personIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
             personDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            measuredDatasBindingSource = new BindingSource(components);
+            idDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            lastNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            nameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            middleNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            dateOfBirthDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            ageDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            genderDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            creditBookDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            rowVersionDataGridViewImageColumn = new DataGridViewImageColumn();
             toolStrip1.SuspendLayout();
             toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             toolStripContainer1.ContentPanel.SuspendLayout();
@@ -150,7 +150,7 @@
             // 
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, middleNameDataGridViewTextBoxColumn, lastNameDataGridViewTextBoxColumn, dateOfBirthDataGridViewTextBoxColumn, ageDataGridViewTextBoxColumn, genderDataGridViewTextBoxColumn, creditBookDataGridViewTextBoxColumn, rowVersionDataGridViewImageColumn });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idDataGridViewTextBoxColumn, lastNameDataGridViewTextBoxColumn, nameDataGridViewTextBoxColumn, middleNameDataGridViewTextBoxColumn, dateOfBirthDataGridViewTextBoxColumn, ageDataGridViewTextBoxColumn, genderDataGridViewTextBoxColumn, creditBookDataGridViewTextBoxColumn, rowVersionDataGridViewImageColumn });
             dataGridView1.DataSource = personBindingSource;
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
@@ -161,62 +161,6 @@
             // personBindingSource
             // 
             personBindingSource.DataSource = typeof(Person);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            idDataGridViewTextBoxColumn.HeaderText = "Id";
-            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Имя";
-            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // middleNameDataGridViewTextBoxColumn
-            // 
-            middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
-            middleNameDataGridViewTextBoxColumn.HeaderText = "Отчество";
-            middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            lastNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // dateOfBirthDataGridViewTextBoxColumn
-            // 
-            dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth";
-            dateOfBirthDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
-            dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
-            // 
-            // ageDataGridViewTextBoxColumn
-            // 
-            ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
-            ageDataGridViewTextBoxColumn.HeaderText = "Возраст";
-            ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            ageDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // genderDataGridViewTextBoxColumn
-            // 
-            genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
-            genderDataGridViewTextBoxColumn.HeaderText = "Пол";
-            genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
-            // 
-            // creditBookDataGridViewTextBoxColumn
-            // 
-            creditBookDataGridViewTextBoxColumn.DataPropertyName = "CreditBook";
-            creditBookDataGridViewTextBoxColumn.HeaderText = "Зачетная книжка";
-            creditBookDataGridViewTextBoxColumn.Name = "creditBookDataGridViewTextBoxColumn";
-            // 
-            // rowVersionDataGridViewImageColumn
-            // 
-            rowVersionDataGridViewImageColumn.DataPropertyName = "RowVersion";
-            rowVersionDataGridViewImageColumn.HeaderText = "RowVersion";
-            rowVersionDataGridViewImageColumn.Name = "rowVersionDataGridViewImageColumn";
             // 
             // dataGridView2
             // 
@@ -229,11 +173,6 @@
             dataGridView2.Name = "dataGridView2";
             dataGridView2.Size = new Size(1100, 233);
             dataGridView2.TabIndex = 0;
-            // 
-            // measuredDatasBindingSource
-            // 
-            measuredDatasBindingSource.DataMember = "MeasuredDatas";
-            measuredDatasBindingSource.DataSource = personBindingSource;
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -371,6 +310,67 @@
             personDataGridViewTextBoxColumn.Name = "personDataGridViewTextBoxColumn";
             personDataGridViewTextBoxColumn.Visible = false;
             // 
+            // measuredDatasBindingSource
+            // 
+            measuredDatasBindingSource.DataMember = "MeasuredDatas";
+            measuredDatasBindingSource.DataSource = personBindingSource;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            idDataGridViewTextBoxColumn.HeaderText = "Id";
+            idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            lastNameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            nameDataGridViewTextBoxColumn.HeaderText = "Имя";
+            nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // middleNameDataGridViewTextBoxColumn
+            // 
+            middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
+            middleNameDataGridViewTextBoxColumn.HeaderText = "Отчество";
+            middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
+            // 
+            // dateOfBirthDataGridViewTextBoxColumn
+            // 
+            dateOfBirthDataGridViewTextBoxColumn.DataPropertyName = "DateOfBirth";
+            dateOfBirthDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
+            dateOfBirthDataGridViewTextBoxColumn.Name = "dateOfBirthDataGridViewTextBoxColumn";
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
+            ageDataGridViewTextBoxColumn.HeaderText = "Возраст";
+            ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            ageDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            genderDataGridViewTextBoxColumn.HeaderText = "Пол";
+            genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            // 
+            // creditBookDataGridViewTextBoxColumn
+            // 
+            creditBookDataGridViewTextBoxColumn.DataPropertyName = "CreditBook";
+            creditBookDataGridViewTextBoxColumn.HeaderText = "Зачетная книжка";
+            creditBookDataGridViewTextBoxColumn.Name = "creditBookDataGridViewTextBoxColumn";
+            // 
+            // rowVersionDataGridViewImageColumn
+            // 
+            rowVersionDataGridViewImageColumn.DataPropertyName = "RowVersion";
+            rowVersionDataGridViewImageColumn.HeaderText = "RowVersion";
+            rowVersionDataGridViewImageColumn.Name = "rowVersionDataGridViewImageColumn";
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -380,6 +380,7 @@
             Name = "Form3";
             Padding = new Padding(5);
             Text = "Инструментально измеренные показатели";
+            WindowState = FormWindowState.Maximized;
             Load += Form3_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
@@ -407,15 +408,6 @@
         private ToolStripButton toolStripButton1;
         private SplitContainer splitContainer1;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
-        private DataGridViewTextBoxColumn creditBookDataGridViewTextBoxColumn;
-        private DataGridViewImageColumn rowVersionDataGridViewImageColumn;
         private BindingSource personBindingSource;
         private DataGridView dataGridView2;
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
@@ -441,5 +433,14 @@
         private DataGridViewTextBoxColumn personIdDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn personDataGridViewTextBoxColumn;
         private BindingSource measuredDatasBindingSource;
+        private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
+        private DataGridViewTextBoxColumn creditBookDataGridViewTextBoxColumn;
+        private DataGridViewImageColumn rowVersionDataGridViewImageColumn;
     }
 }
