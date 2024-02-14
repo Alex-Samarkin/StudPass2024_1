@@ -79,11 +79,15 @@
             personIdDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             personDataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
             eContactsBindingSource = new BindingSource(components);
+            toolStrip2 = new ToolStrip();
+            toolStripButton6 = new ToolStripButton();
+            toolStripButton7 = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)personBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)adressesBindingSource).BeginInit();
             toolStrip1.SuspendLayout();
             toolStripContainer1.BottomToolStripPanel.SuspendLayout();
             toolStripContainer1.ContentPanel.SuspendLayout();
+            toolStripContainer1.TopToolStripPanel.SuspendLayout();
             toolStripContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
@@ -98,6 +102,7 @@
             ((System.ComponentModel.ISupportInitialize)adressesBindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)eContactsBindingSource).BeginInit();
+            toolStrip2.SuspendLayout();
             SuspendLayout();
             // 
             // personBindingSource
@@ -117,7 +122,7 @@
             toolStrip1.Margin = new Padding(3);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Padding = new Padding(3);
-            toolStrip1.Size = new Size(809, 29);
+            toolStrip1.Size = new Size(778, 29);
             toolStrip1.TabIndex = 3;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -203,6 +208,7 @@
             // 
             // toolStripContainer1.TopToolStripPanel
             // 
+            toolStripContainer1.TopToolStripPanel.Controls.Add(toolStrip2);
             toolStripContainer1.TopToolStripPanel.Padding = new Padding(3);
             // 
             // splitContainer1
@@ -485,6 +491,33 @@
             eContactsBindingSource.DataMember = "EContacts";
             eContactsBindingSource.DataSource = personBindingSource;
             // 
+            // toolStrip2
+            // 
+            toolStrip2.Dock = DockStyle.None;
+            toolStrip2.Items.AddRange(new ToolStripItem[] { toolStripButton6, toolStripButton7 });
+            toolStrip2.Location = new Point(3, 0);
+            toolStrip2.Name = "toolStrip2";
+            toolStrip2.Size = new Size(173, 25);
+            toolStrip2.TabIndex = 0;
+            // 
+            // toolStripButton6
+            // 
+            toolStripButton6.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripButton6.Image = (Image)resources.GetObject("toolStripButton6.Image");
+            toolStripButton6.ImageTransparentColor = Color.Magenta;
+            toolStripButton6.Name = "toolStripButton6";
+            toolStripButton6.Size = new Size(61, 22);
+            toolStripButton6.Text = "Load CSV";
+            // 
+            // toolStripButton7
+            // 
+            toolStripButton7.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripButton7.Image = (Image)resources.GetObject("toolStripButton7.Image");
+            toolStripButton7.ImageTransparentColor = Color.Magenta;
+            toolStripButton7.Name = "toolStripButton7";
+            toolStripButton7.Size = new Size(69, 22);
+            toolStripButton7.Text = "Export CSV";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -503,6 +536,8 @@
             toolStripContainer1.BottomToolStripPanel.ResumeLayout(false);
             toolStripContainer1.BottomToolStripPanel.PerformLayout();
             toolStripContainer1.ContentPanel.ResumeLayout(false);
+            toolStripContainer1.TopToolStripPanel.ResumeLayout(false);
+            toolStripContainer1.TopToolStripPanel.PerformLayout();
             toolStripContainer1.ResumeLayout(false);
             toolStripContainer1.PerformLayout();
             splitContainer1.Panel1.ResumeLayout(false);
@@ -518,6 +553,8 @@
             ((System.ComponentModel.ISupportInitialize)adressesBindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             ((System.ComponentModel.ISupportInitialize)eContactsBindingSource).EndInit();
+            toolStrip2.ResumeLayout(false);
+            toolStrip2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -572,5 +609,8 @@
         private ToolStripButton toolStripButton3;
         private ToolStripButton toolStripButton4;
         private ToolStripButton toolStripButton5;
+        private ToolStrip toolStrip2;
+        private ToolStripButton toolStripButton6;
+        private ToolStripButton toolStripButton7;
     }
 }
