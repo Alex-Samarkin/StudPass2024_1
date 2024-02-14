@@ -82,6 +82,7 @@
             toolStrip2 = new ToolStrip();
             toolStripButton6 = new ToolStripButton();
             toolStripButton7 = new ToolStripButton();
+            openFileDialog1 = new OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)personBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)adressesBindingSource).BeginInit();
             toolStrip1.SuspendLayout();
@@ -497,7 +498,7 @@
             toolStrip2.Items.AddRange(new ToolStripItem[] { toolStripButton6, toolStripButton7 });
             toolStrip2.Location = new Point(3, 0);
             toolStrip2.Name = "toolStrip2";
-            toolStrip2.Size = new Size(173, 25);
+            toolStrip2.Size = new Size(142, 25);
             toolStrip2.TabIndex = 0;
             // 
             // toolStripButton6
@@ -508,6 +509,7 @@
             toolStripButton6.Name = "toolStripButton6";
             toolStripButton6.Size = new Size(61, 22);
             toolStripButton6.Text = "Load CSV";
+            toolStripButton6.Click += toolStripButton6_Click;
             // 
             // toolStripButton7
             // 
@@ -517,6 +519,12 @@
             toolStripButton7.Name = "toolStripButton7";
             toolStripButton7.Size = new Size(69, 22);
             toolStripButton7.Text = "Export CSV";
+            // 
+            // openFileDialog1
+            // 
+            openFileDialog1.DefaultExt = "csv";
+            openFileDialog1.FileName = "openFileDialog1";
+            openFileDialog1.Filter = "CSV|*.csv";
             // 
             // Form1
             // 
@@ -612,5 +620,6 @@
         private ToolStrip toolStrip2;
         private ToolStripButton toolStripButton6;
         private ToolStripButton toolStripButton7;
+        private OpenFileDialog openFileDialog1;
     }
 }

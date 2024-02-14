@@ -1,3 +1,4 @@
+using LumenWorks.Framework.IO.Csv;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
 
@@ -106,6 +107,34 @@ namespace StudPass2024_1
             var f = new Form4();
             f.dbContext = this.dbContext;
             f.ShowDialog();
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // open the file "data.csv" which is a CSV file with headers
+                using (var csv = new CachedCsvReader(new StreamReader(openFileDialog1.FileName), true,';'))
+                {
+                    // Field headers will automatically be used as column names
+                    var tmp = csv.ToList();
+                    string s = tmp[0][0] + " " + tmp[0][1] + tmp[0][2];
+                    if (s.Length > 0)
+                    {
+                        
+                        if(MessageBox.Show(s,"" ,MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            foreach (var item in tmp)
+                            {
+                                var p = new Person()
+                                { LastName = item[0], Name = item[1], MiddleName = item[2] };
+                                dbContext.Persons.Add(p);
+                            }
+                            personBindingSource.ResetBindings(false);
+                        }
+                    }
+                }
+            }
         }
     }
 }
