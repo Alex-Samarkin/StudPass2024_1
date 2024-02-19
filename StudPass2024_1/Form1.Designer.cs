@@ -498,7 +498,7 @@
             toolStrip2.Items.AddRange(new ToolStripItem[] { toolStripButton6, toolStripButton7 });
             toolStrip2.Location = new Point(3, 0);
             toolStrip2.Name = "toolStrip2";
-            toolStrip2.Size = new Size(142, 25);
+            toolStrip2.Size = new Size(173, 25);
             toolStrip2.TabIndex = 0;
             // 
             // toolStripButton6
@@ -519,6 +519,7 @@
             toolStripButton7.Name = "toolStripButton7";
             toolStripButton7.Size = new Size(69, 22);
             toolStripButton7.Text = "Export CSV";
+            toolStripButton7.Click += toolStripButton7_Click;
             // 
             // openFileDialog1
             // 

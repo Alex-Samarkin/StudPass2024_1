@@ -1,6 +1,9 @@
+using CsvHelper.Configuration;
+using CsvHelper;
 using LumenWorks.Framework.IO.Csv;
 using Microsoft.EntityFrameworkCore;
 using System.Data;
+using System.Globalization;
 
 namespace StudPass2024_1
 {
@@ -111,18 +114,18 @@ namespace StudPass2024_1
 
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
-            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 // open the file "data.csv" which is a CSV file with headers
-                using (var csv = new CachedCsvReader(new StreamReader(openFileDialog1.FileName), true,';'))
+                using (var csv = new CachedCsvReader(new StreamReader(openFileDialog1.FileName), true, ';'))
                 {
                     // Field headers will automatically be used as column names
                     var tmp = csv.ToList();
                     string s = tmp[0][0] + " " + tmp[0][1] + tmp[0][2];
                     if (s.Length > 0)
                     {
-                        
-                        if(MessageBox.Show(s,"" ,MessageBoxButtons.YesNo) == DialogResult.Yes)
+
+                        if (MessageBox.Show(s, "", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
                             foreach (var item in tmp)
                             {
@@ -135,6 +138,65 @@ namespace StudPass2024_1
                     }
                 }
             }
+        }
+
+        private void  toolStripButton7_Click(object sender, EventArgs e)
+        {
+            var queryAll1 = dbContext.Persons.ToList();
+ 
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                HasHeaderRecord = true // Include header row
+            };
+
+            config.Delimiter = ";";
+            config.MemberTypes = MemberTypes.Properties;
+            config.Quote = '"';
+            try
+            {
+
+                using (var writer = new StreamWriter("person.csv"))
+                using (var csv = new CsvWriter(writer, config))
+                {
+                    csv.WriteRecords(queryAll1);
+                }
+
+                var queryAll2 = dbContext.Adresses.ToList();
+                using (var writer = new StreamWriter("adress.csv"))
+                using (var csv = new CsvWriter(writer, config))
+                {
+                    csv.WriteRecords(queryAll2);
+                }
+
+                var queryAll3 = dbContext.EContacts.ToList();
+                using (var writer = new StreamWriter("contacts.csv"))
+                using (var csv = new CsvWriter(writer, config))
+                {
+                    csv.WriteRecords(queryAll3);
+                }
+
+                var queryAll4 = dbContext.AntropDatas.ToList();
+                using (var writer = new StreamWriter("antrodata.csv"))
+                using (var csv = new CsvWriter(writer, config))
+                {
+                    csv.WriteRecords(queryAll4);
+                }
+
+                var queryAll5 = dbContext.MeasuredDatas.ToList();
+                using (var writer = new StreamWriter("mdata.csv"))
+                using (var csv = new CsvWriter(writer, config))
+                {
+                    csv.WriteRecords(queryAll5);
+                }
+
+                var queryAll6 = dbContext.QDatas.ToList();
+                using (var writer = new StreamWriter("qdata.csv"))
+                using (var csv = new CsvWriter(writer, config))
+                {
+                    csv.WriteRecords(queryAll6);
+                }
+            }
+            catch{ };
         }
     }
 }
