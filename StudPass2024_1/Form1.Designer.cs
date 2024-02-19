@@ -83,6 +83,7 @@
             toolStripButton6 = new ToolStripButton();
             toolStripButton7 = new ToolStripButton();
             openFileDialog1 = new OpenFileDialog();
+            toolStripButton8 = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)personBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)adressesBindingSource).BeginInit();
             toolStrip1.SuspendLayout();
@@ -495,10 +496,10 @@
             // toolStrip2
             // 
             toolStrip2.Dock = DockStyle.None;
-            toolStrip2.Items.AddRange(new ToolStripItem[] { toolStripButton6, toolStripButton7 });
+            toolStrip2.Items.AddRange(new ToolStripItem[] { toolStripButton6, toolStripButton7, toolStripButton8 });
             toolStrip2.Location = new Point(3, 0);
             toolStrip2.Name = "toolStrip2";
-            toolStrip2.Size = new Size(173, 25);
+            toolStrip2.Size = new Size(232, 25);
             toolStrip2.TabIndex = 0;
             // 
             // toolStripButton6
@@ -526,6 +527,16 @@
             openFileDialog1.DefaultExt = "csv";
             openFileDialog1.FileName = "openFileDialog1";
             openFileDialog1.Filter = "CSV|*.csv";
+            // 
+            // toolStripButton8
+            // 
+            toolStripButton8.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripButton8.Image = (Image)resources.GetObject("toolStripButton8.Image");
+            toolStripButton8.ImageTransparentColor = Color.Magenta;
+            toolStripButton8.Name = "toolStripButton8";
+            toolStripButton8.Size = new Size(59, 22);
+            toolStripButton8.Text = "Графики";
+            toolStripButton8.Click += toolStripButton8_Click;
             // 
             // Form1
             // 
@@ -622,5 +633,6 @@
         private ToolStripButton toolStripButton6;
         private ToolStripButton toolStripButton7;
         private OpenFileDialog openFileDialog1;
+        private ToolStripButton toolStripButton8;
     }
 }

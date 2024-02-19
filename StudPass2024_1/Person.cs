@@ -54,5 +54,7 @@ namespace StudPass2024_1
         // link to QData 
         public virtual ObservableCollectionListSource<QData> QDatas { get; } = new();
 
+        public string FIO() => $"{LastName} {Name[0]}.{MiddleName[0]}.";
+
     }
 }

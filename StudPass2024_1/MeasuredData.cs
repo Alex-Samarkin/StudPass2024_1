@@ -58,7 +58,13 @@ namespace StudPass2024_1
         public int VitalCapacityCalc
         {
             get
-            { return (int)(Depth_breathing_vol + Reserve_exhalation_vol + Reserve_inspiratory_vol); }
+            {
+                try
+                {
+                    return (int)(Depth_breathing_vol + Reserve_exhalation_vol + Reserve_inspiratory_vol);
+                } 
+                catch { return 0; }
+                }
         }
         [DisplayName("ЖЕЛ измеренная")]
         public int? VitalCapacity { get; set; }

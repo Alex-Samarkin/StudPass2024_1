@@ -140,10 +140,10 @@ namespace StudPass2024_1
             }
         }
 
-        private void  toolStripButton7_Click(object sender, EventArgs e)
+        private void toolStripButton7_Click(object sender, EventArgs e)
         {
             var queryAll1 = dbContext.Persons.ToList();
- 
+
             var config = new CsvConfiguration(CultureInfo.InvariantCulture)
             {
                 HasHeaderRecord = true // Include header row
@@ -196,7 +196,15 @@ namespace StudPass2024_1
                     csv.WriteRecords(queryAll6);
                 }
             }
-            catch{ };
+            catch { };
+        }
+
+        private void toolStripButton8_Click(object sender, EventArgs e)
+        {
+            var f = new Form5();
+            f.dbContext = dbContext;
+
+            f.ShowDialog();
         }
     }
 }
